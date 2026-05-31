@@ -1,0 +1,89 @@
+---
+title: Troubleshooting
+description: Solutions to common issues across sign-in, generation, publishing, integrations, and credits in MuseRank.
+---
+
+Running into something unexpected? Most issues fall into one of the areas below. If you don't find a fix here, check the [FAQ](/help/faq) or [contact support](/help/support).
+
+## Account & sign-in
+
+<AccordionGroup>
+  <Accordion title="I didn't get my email verification link" icon="envelope">
+    Check your spam folder. If it's not there, request a new verification email from the prompt after signing in. Make sure your email address is typed correctly.
+  </Accordion>
+  <Accordion title="Password reset link isn't working" icon="key">
+    Reset links expire after a while and can only be used once. Request a fresh link from the forgot-password screen. If you requested several, use the most recent email.
+  </Accordion>
+  <Accordion title="I'm stuck after login or sent to the marketing site" icon="rotate">
+    This usually clears on a refresh. Make sure your email is verified and you have an active subscription. If it persists, sign out and back in, or [contact support](/help/support).
+  </Accordion>
+  <Accordion title="My passkey isn't offered" icon="fingerprint">
+    Passkeys are tied to the device and browser you created them on. On a new device, sign in with your password or social login, then add a passkey there from your account settings.
+  </Accordion>
+</AccordionGroup>
+
+## Content generation
+
+<AccordionGroup>
+  <Accordion title="Generation failed or stopped midway" icon="pen-nib">
+    This is usually a transient hiccup. Try generating again. If the brief or outline was very large, simplify it and retry.
+  </Accordion>
+  <Accordion title="The draft doesn't sound like my brand" icon="comment">
+    Revisit your [brand voice profile](/onboarding) in your website settings and refine the tone and audience description. Pointing MuseRank at more representative pages improves the match.
+  </Accordion>
+  <Accordion title="The AI Assistant says I'm rate-limited" icon="gauge">
+    Quick fixes are limited to a few per minute. Wait about a minute and try again.
+  </Accordion>
+  <Accordion title="An AI change made things worse" icon="clock-rotate-left">
+    Press <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>Z</kbd> to undo immediately, or restore an earlier version from the editor's [version history](/guides/editor#version-history).
+  </Accordion>
+</AccordionGroup>
+
+## Publishing & integrations
+
+<AccordionGroup>
+  <Accordion title="My article didn't appear on my site" icon="paper-plane">
+    Confirm the destination is still connected on the **Integrations** page (look for a "needs attention" flag), and check the article's status. For CMS-specific causes, see the integration's own troubleshooting section — [WordPress](/integrations/wordpress#troubleshooting), [Shopify](/integrations/shopify#troubleshooting), [Webflow](/integrations/webflow#troubleshooting), [Framer](/integrations/framer#troubleshooting), [Ghost](/integrations/ghost#troubleshooting).
+  </Accordion>
+  <Accordion title="An integration shows 'needs attention' or 'reconnect'" icon="plug-circle-exclamation">
+    Authorization tokens can expire or be revoked. Open the Integrations page and reconnect the flagged integration.
+  </Accordion>
+  <Accordion title="WordPress returns a 403 / blocked error" icon="shield-halved">
+    A security plugin (Wordfence, Sucuri), Cloudflare bot protection, or host firewall is likely blocking the request. Temporarily relax the rule or ask your host to allow `app.muserank.com`. See [WordPress troubleshooting](/integrations/wordpress#troubleshooting).
+  </Accordion>
+  <Accordion title="Duplicate posts on my site" icon="copy">
+    MuseRank updates the existing post when you re-publish, so duplicates are rare. They usually come from publishing the same content through a second path (e.g. a manual import). Remove the extra copy on your CMS.
+  </Accordion>
+  <Accordion title="Featured image is missing after publish" icon="image">
+    Confirm your theme/template supports a featured image and that your CMS can fetch external images. Re-publish after setting the image in the editor.
+  </Accordion>
+</AccordionGroup>
+
+## Search performance & data
+
+<AccordionGroup>
+  <Accordion title="No data in Search Performance" icon="chart-line">
+    Make sure [Google Search Console is connected](/integrations/google-search-console) and you selected a verified property. GSC data also updates on Google's schedule, so allow a couple of days for recent activity to show.
+  </Accordion>
+  <Accordion title="My GSC property isn't listed" icon="list-check">
+    Authorize with the Google account that has access to the verified property, and confirm the property is verified in Search Console.
+  </Accordion>
+</AccordionGroup>
+
+## Credits & billing
+
+<AccordionGroup>
+  <Accordion title="I ran out of credits" icon="coins">
+    Buy a one-time credit pack for an instant top-up, or upgrade your plan for a larger recurring allowance. Credits also reset at the start of each billing cycle. See [Billing & credits](/guides/billing-and-credits).
+  </Accordion>
+  <Accordion title="I can't access billing settings" icon="lock">
+    Billing is owner-only. If you're an admin or editor, ask your workspace owner to make the change. See [Workspaces & roles](/guides/workspaces-and-roles).
+  </Accordion>
+  <Accordion title="A feature button is hidden or disabled" icon="user-shield">
+    Some actions are limited by [role](/guides/workspaces-and-roles) — for example, only admins can connect integrations or approve content. Ask an admin or owner if you need access.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Still stuck?" icon="headset" href="/help/support" horizontal>
+  Reach out and we'll help you get unblocked.
+</Card>

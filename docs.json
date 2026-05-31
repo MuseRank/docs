@@ -1,29 +1,171 @@
 {
-  "name": "Documentation",
+  "name": "MuseRank",
+  "theme": "mint",
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
   "favicon": "/favicon.svg",
-  "theme": "mint",
   "colors": {
-    "primary": "#ff0000"
+    "primary": "#16294C",
+    "light": "#6E8FC7",
+    "dark": "#0A1426"
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "icons": {
+    "library": "fontawesome"
   },
   "navigation": {
-    "groups": [
+    "tabs": [
       {
-        "group": "Getting started",
-        "pages": [
-          "introduction",
-          "quickstart"
+        "tab": "Get Started",
+        "groups": [
+          {
+            "group": "Welcome",
+            "pages": [
+              "introduction",
+              "core-concepts",
+              "quickstart",
+              "onboarding",
+              "dashboard"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Keyword Research & Strategy",
+            "pages": [
+              "guides/keyword-research",
+              "guides/keyword-bank",
+              "guides/content-plan",
+              "guides/topical-maps"
+            ]
+          },
+          {
+            "group": "Creating Content",
+            "pages": [
+              "guides/article-wizard",
+              "guides/quick-draft",
+              "guides/editor",
+              "guides/ai-assistant",
+              "guides/article-chat",
+              "guides/knowledge-base",
+              "guides/images",
+              "guides/seo-geo-analysis"
+            ]
+          },
+          {
+            "group": "Planning & Automation",
+            "pages": [
+              "guides/scheduler",
+              "guides/autopilot",
+              "guides/content-audit"
+            ]
+          },
+          {
+            "group": "Analytics & Growth",
+            "pages": [
+              "guides/search-performance",
+              "guides/strategy-insights",
+              "guides/backlink-exchange"
+            ]
+          },
+          {
+            "group": "Workspace & Account",
+            "pages": [
+              "guides/workspaces-and-roles",
+              "guides/billing-and-credits"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Publishing & Integrations",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              "integrations/overview"
+            ]
+          },
+          {
+            "group": "Content Management Systems",
+            "pages": [
+              "integrations/wordpress",
+              "integrations/shopify",
+              "integrations/webflow",
+              "integrations/framer",
+              "integrations/ghost",
+              "integrations/notion"
+            ]
+          },
+          {
+            "group": "Data & Developer",
+            "pages": [
+              "integrations/google-search-console",
+              "integrations/github",
+              "integrations/webhooks"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Help",
+        "groups": [
+          {
+            "group": "Help & Support",
+            "pages": [
+              "help/troubleshooting",
+              "help/faq",
+              "help/support"
+            ]
+          }
         ]
       }
     ]
   },
+  "navbar": {
+    "links": [
+      {
+        "label": "Support",
+        "href": "mailto:support@muserank.com"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Open MuseRank",
+      "href": "https://app.muserank.com"
+    }
+  },
   "footer": {
     "socials": {
-      "github": "https://github.com/yourusername",
-      "twitter": "https://twitter.com/yourusername"
-    }
+      "x": "https://x.com/muserank_com",
+      "linkedin": "https://www.linkedin.com/company/muserank",
+      "instagram": "https://www.instagram.com/muse.rank",
+      "facebook": "https://www.facebook.com/muserankcom",
+      "website": "https://muserank.com"
+    },
+    "links": [
+      {
+        "header": "Product",
+        "items": [
+          { "label": "Open App", "href": "https://app.muserank.com" },
+          { "label": "Website", "href": "https://muserank.com" }
+        ]
+      },
+      {
+        "header": "Resources",
+        "items": [
+          { "label": "Quickstart", "href": "/quickstart" },
+          { "label": "Integrations", "href": "/integrations/overview" },
+          { "label": "Support", "href": "mailto:support@muserank.com" }
+        ]
+      }
+    ]
   }
 }

@@ -1,0 +1,11 @@
+<svg width="186" height="40" viewBox="0 0 186 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(2 4)">
+    <polygon points="2,20 13,1 18,20" fill="#0E1B33"/>
+    <polygon points="15,20 23,4 29,20" fill="#22344F"/>
+    <polygon points="3,19 30,17 18,33" fill="#0E1B33"/>
+    <polygon points="18,19 30,17 18,33" fill="#22344F"/>
+    <polygon points="28,17 38,12 30,20" fill="#0E1B33"/>
+    <polygon points="3,19 0,27 10,25" fill="#0E1B33"/>
+  </g>
+  <text x="48" y="27" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-size="20" font-weight="600" letter-spacing="-0.6" fill="#0E1B33">MuseRank</text>
+</svg>

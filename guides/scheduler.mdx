@@ -1,0 +1,86 @@
+---
+title: Scheduler
+description: Plan, review, approve, and publish content on a calendar. Use queues for automatic scheduling, workflow states, approvals, and reliable publishing.
+---
+
+The Scheduler is your content calendar and publishing queue. It's where articles move from idea to live — with visual planning, an optional approval workflow, and reliable automated publishing.
+
+## Views
+
+<CardGroup cols={3}>
+  <Card title="Month" icon="calendar">
+    A calendar grid showing each article on its scheduled date. Great for the big picture.
+  </Card>
+  <Card title="Week" icon="calendar-week">
+    Day-by-day with time slots, for precise scheduling.
+  </Card>
+  <Card title="List" icon="list">
+    A sortable, filterable table of all scheduled content.
+  </Card>
+</CardGroup>
+
+You can filter by status and search by title or keyword in any view.
+
+## Scheduling content
+
+### Drag and drop
+
+Drag an article onto a date (month view) or a time slot (week view) to schedule it. Drag an item out of the **backlog** panel — your unscheduled content — onto the calendar to give it a slot. Reschedule anytime by dragging it somewhere else.
+
+### Queues — automatic scheduling
+
+A **queue** is a recurring posting schedule. Instead of placing each article by hand, you define the days and times you want to publish (and your timezone), then add articles to the queue — each one automatically takes the next open slot.
+
+<Steps>
+  <Step title="Create a queue">
+    Define your posting days and times and set your timezone.
+  </Step>
+  <Step title="Add articles">
+    Drop finished articles into the queue; they fill the next available slots in order.
+  </Step>
+  <Step title="Let it run">
+    Articles publish automatically at their assigned times.
+  </Step>
+</Steps>
+
+<Tip>
+  Queues are the easiest way to keep a consistent publishing cadence — set "Tuesday and Thursday at 9am" once and just feed the queue.
+</Tip>
+
+## The workflow states
+
+Each article moves through a pipeline so you always know where it stands:
+
+```
+Idea → Brief → Draft → Review → Approved → Scheduled → Published
+```
+
+If a publish fails, it moves to **Failed** and is retried automatically (see below). During review, an editor can send a piece back for changes.
+
+## Approvals and guest review
+
+If your team requires sign-off before publishing, turn on the **approval workflow**:
+
+- Content must be **approved** before it can publish.
+- Reviewers can **approve**, **request changes**, or **unapprove**, and every action is recorded in an audit trail.
+- **Guest review links** let you share an article with someone outside your workspace (a client or stakeholder) so they can review and approve without needing an account.
+
+<Note>
+  Approving, requesting changes, and generating guest links are **admin** actions. Editors create and submit content; admins approve it. See [Workspaces & roles](/guides/workspaces-and-roles).
+</Note>
+
+## Reliable publishing
+
+When an article's scheduled time arrives, MuseRank publishes it to your connected destination automatically.
+
+- **Preflight checks** validate the connection and required fields before publishing.
+- If a publish fails (for example, a temporary CMS outage), it's **retried automatically** with increasing delays.
+- You can always **Publish now** for an immediate push, or **Schedule…** for a specific future time.
+
+<Card title="Connect a destination first" icon="plug" href="/integrations/overview">
+  Publishing requires a connected platform like WordPress, Shopify, or Webflow.
+</Card>
+
+## Hands-off publishing
+
+Want MuseRank to plan *and* create the content too, not just publish it? That's [Auto-Pilot](/guides/autopilot).

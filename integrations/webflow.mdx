@@ -1,0 +1,52 @@
+---
+title: Webflow
+description: Publish MuseRank articles into a Webflow CMS collection, with custom field mappings and automatic updates on republish.
+---
+
+Connect Webflow to publish articles into a CMS collection on your Webflow site. You connect via OAuth, choose a site and collection, map your fields once, and MuseRank handles the rest.
+
+## What you'll need
+
+- A Webflow site with a CMS collection for your blog or articles (for example, a "Blog Posts" collection).
+- Permission to authorize apps on your Webflow account.
+
+## Connect Webflow
+
+<Steps>
+  <Step title="Authorize Webflow">
+    In MuseRank, open **Integrations** for your website, find the Webflow card, and connect. Approve the Webflow authorization screen — MuseRank requests access to read and write your sites and CMS.
+  </Step>
+  <Step title="Choose a site and collection">
+    Select the Webflow site and the CMS collection where articles should be published.
+  </Step>
+  <Step title="Map your fields">
+    Match MuseRank's article fields (title, body, summary, image, and so on) to the fields in your Webflow collection. Save the mapping.
+  </Step>
+</Steps>
+
+<Note>
+  If you don't set custom mappings, MuseRank falls back to common defaults (such as `post-body` and `post-summary` field slugs). Mapping explicitly is recommended so every field lands where you expect.
+</Note>
+
+## Publishing
+
+After setup, publish from the [editor](/guides/editor) or [Scheduler](/guides/scheduler). MuseRank creates a CMS item in your chosen collection using your field mappings.
+
+- **Republishing** updates the existing CMS item in place (matched by article), so you won't get duplicates.
+- An item's draft/published state reflects how it's configured in your collection.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Articles publish but fields are empty" icon="table-columns">
+    Check your field mappings — an unmapped field won't receive content. Make sure your collection has a rich-text/body field mapped.
+  </Accordion>
+  <Accordion title="Authorization expired" icon="key">
+    Reconnect Webflow from the Integrations page to refresh access.
+  </Accordion>
+  <Accordion title="Changes not visible on the live site" icon="globe">
+    Webflow may require a site publish for CMS changes to appear on your live domain, depending on your setup.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />

@@ -1,0 +1,51 @@
+---
+title: GitHub
+description: Publish MuseRank articles as MDX commits or pull requests to a GitHub repository — ideal for static-site generators and docs sites.
+---
+
+Connect GitHub to publish articles directly into a repository as MDX files. This is the go-to option for static sites built with frameworks like Astro, Next.js, Hugo, or any setup where content lives as files in a repo.
+
+## What you'll need
+
+- A GitHub account with access to the target repository.
+- A repository with a folder where content files live (for example, `content/posts`).
+
+## Connect GitHub
+
+<Steps>
+  <Step title="Authorize GitHub">
+    In MuseRank, open **Integrations** for your website and click **Connect GitHub**. Approve the GitHub authorization prompt — MuseRank requests repository access so it can commit content on your behalf.
+  </Step>
+  <Step title="Configure the destination">
+    Go to **Settings → Publish configuration** and choose the **repository**, **branch**, and **content path** (the folder your posts live in, e.g. `content/posts`).
+  </Step>
+</Steps>
+
+## Publishing
+
+When you publish from the [editor](/guides/editor) or [Scheduler](/guides/scheduler), MuseRank pushes the article to your repository as an MDX file — including the content, images, and frontmatter (title, description, date, and other metadata your site uses).
+
+Depending on your configuration, MuseRank can either:
+
+- **Commit directly** to your chosen branch, or
+- **Open a pull request** for review before the content merges.
+
+<Tip>
+  The pull-request workflow is great for teams — it lets you review generated content in GitHub (and run your site's build checks) before it goes live.
+</Tip>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Commits are failing" icon="code-commit">
+    Make sure the configured **content path** exists in the repository — a missing folder causes commit failures.
+  </Accordion>
+  <Accordion title="Pull requests aren't created" icon="code-pull-request">
+    Confirm the target branch allows pull requests from your GitHub user and that your configuration uses the PR workflow.
+  </Accordion>
+  <Accordion title="Rotating or revoking access" icon="arrows-rotate">
+    If you revoke MuseRank in your GitHub settings or rotate credentials, use **Reconnect GitHub** in MuseRank to re-authorize.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />

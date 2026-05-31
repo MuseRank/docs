@@ -1,0 +1,95 @@
+---
+title: Integrations overview
+description: Connect publishing destinations and data sources to MuseRank — WordPress, Shopify, Webflow, Framer, Ghost, Notion, GitHub, webhooks, and Google Search Console.
+---
+
+Integrations connect MuseRank to the rest of your stack — the places you **publish** content and the data sources that make MuseRank smarter. You manage them per website on the **Integrations** page in the app.
+
+<Note>
+  Integrations are scoped to each **website**. Connect them for the site you're working in, and switch websites to manage another site's connections.
+</Note>
+
+## Two kinds of integration
+
+<CardGroup cols={2}>
+  <Card title="Publishing destinations" icon="paper-plane">
+    Where your finished articles go live. Connect one (or several) and publish or schedule articles straight to them — with images and SEO metadata carried across.
+  </Card>
+  <Card title="Data & marketing" icon="chart-line">
+    Sources that feed MuseRank's insights and broadcast your publishes. Google Search Console is the most important — connect it first.
+  </Card>
+</CardGroup>
+
+## Publishing destinations
+
+<CardGroup cols={2}>
+  <Card title="WordPress" icon="wordpress" href="/integrations/wordpress">
+    Publish to any WordPress site via the official MuseRank plugin. Instant, signed pushes.
+  </Card>
+  <Card title="Shopify" icon="shopify" href="/integrations/shopify">
+    Publish to your Shopify store blog with the embedded MuseRank app.
+  </Card>
+  <Card title="Webflow" icon="webflow" href="/integrations/webflow">
+    Publish into a Webflow CMS collection with custom field mappings.
+  </Card>
+  <Card title="Framer" icon="vector-square" href="/integrations/framer">
+    Sync to Framer CMS via the Server API or pull with the Framer plugin.
+  </Card>
+  <Card title="Ghost" icon="ghost" href="/integrations/ghost">
+    Publish to Ghost using the Admin API.
+  </Card>
+  <Card title="Notion" icon="file-lines" href="/integrations/notion">
+    Publish articles into a Notion database.
+  </Card>
+  <Card title="GitHub" icon="github" href="/integrations/github">
+    Commit MDX articles to a repository — ideal for static sites.
+  </Card>
+  <Card title="Webhooks" icon="webhook" href="/integrations/webhooks">
+    Send publish events to any custom endpoint, with an official SDK.
+  </Card>
+</CardGroup>
+
+## Data & marketing
+
+<CardGroup cols={2}>
+  <Card title="Google Search Console" icon="magnifying-glass-chart" href="/integrations/google-search-console">
+    The recommended first connection — powers performance data and keyword opportunities.
+  </Card>
+  <Card title="Social broadcasting" icon="bullhorn">
+    Broadcast your publishes to downstream marketing channels. Connect it from the Integrations page once your website is configured.
+  </Card>
+</CardGroup>
+
+## How publishing works
+
+However your destination is set up, the flow is the same from your side:
+
+<Steps>
+  <Step title="Connect once">
+    Authorize the destination on the Integrations page. Connecting and disconnecting integrations is an **admin** action.
+  </Step>
+  <Step title="Configure where needed">
+    Some destinations need a choice — a default blog (Shopify), a collection (Webflow), or a repo and path (GitHub).
+  </Step>
+  <Step title="Publish or schedule">
+    From the [editor](/guides/editor) hit **Publish**, or send the article to the [Scheduler](/guides/scheduler) for a future date. [Auto-Pilot](/guides/autopilot) can publish automatically too.
+  </Step>
+  <Step title="Republish safely">
+    Editing and re-publishing an article **updates** the existing post rather than creating a duplicate.
+  </Step>
+</Steps>
+
+## What gets carried across
+
+When you publish, MuseRank sends the full article and its metadata to the destination. Depending on what the platform supports, that includes:
+
+- Title and full content
+- URL slug
+- Featured image (uploaded to the platform's media library where applicable)
+- SEO title, meta description, and focus keyword
+- Tags and category
+- Status and scheduled date
+
+<Tip>
+  You can connect more than one destination per website and choose where to publish each article — handy if you syndicate content across platforms.
+</Tip>

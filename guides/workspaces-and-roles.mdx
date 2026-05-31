@@ -1,0 +1,89 @@
+---
+title: Workspaces & roles
+description: Manage your workspace, invite teammates, understand the owner/admin/editor roles, and set up an approval workflow.
+---
+
+A workspace is your team's shared home in MuseRank. This guide covers inviting members, what each role can do, and how permissions shape collaboration.
+
+## Workspaces and websites
+
+Your **workspace** holds your team, your billing, and one or more **websites**. Each website has its own content, brand voice, and integrations. Most teams use a single workspace; agencies managing many clients may create several.
+
+Switch between websites from the top of the sidebar — the app reloads to show that site's data.
+
+## Roles
+
+Every member holds exactly one role. Roles are simple and additive — a higher role can do everything a lower one can, plus more.
+
+| Role | Can do |
+| --- | --- |
+| **Owner** | Everything. Manage billing, delete the workspace, manage API keys, change member roles, plus all admin and editor abilities. The workspace creator is the first owner. |
+| **Admin** | Manage members and invitations, connect/disconnect and configure integrations, edit website settings and brand voice, and approve content — plus all editor abilities. |
+| **Editor** | Create, edit, delete, and publish articles, and use already-connected integrations. The day-to-day content role. |
+
+<Note>
+  There is no separate "viewer" or "writer" role. Editor is the baseline content role — there's no view-only tier. The role set is exactly **owner, admin, editor**.
+</Note>
+
+### Who can do what
+
+| Action | Owner | Admin | Editor |
+| --- | :---: | :---: | :---: |
+| Create / edit / publish articles | ✓ | ✓ | ✓ |
+| Use connected integrations | ✓ | ✓ | ✓ |
+| Approve content & guest links | ✓ | ✓ | — |
+| Connect / configure integrations | ✓ | ✓ | — |
+| Invite & manage members | ✓ | ✓ | — |
+| Edit website settings & brand voice | ✓ | ✓ | — |
+| Manage billing | ✓ | — | — |
+| Manage API keys | ✓ | — | — |
+| Change member roles | ✓ | — | — |
+| Delete website or workspace | ✓ | — | — |
+
+<Note>
+  Sensitive actions like deleting a website or workspace or removing a member may ask you to re-confirm your password for security, even if you're already signed in.
+</Note>
+
+## Inviting teammates
+
+<Steps>
+  <Step title="Open member settings">
+    As an owner or admin, go to your workspace settings and find the members section.
+  </Step>
+  <Step title="Send an invitation">
+    Enter the person's email and choose their role (admin or editor).
+  </Step>
+  <Step title="They accept">
+    The invitee gets an email with a link to join your workspace.
+  </Step>
+</Steps>
+
+## Approval workflows
+
+When editors and admins work together, you can require sign-off before anything goes live:
+
+- Editors create and submit content.
+- Admins **approve**, **request changes**, or **unapprove** — all tracked in an audit trail.
+- **Guest review links** let external stakeholders (like clients) review and approve without an account.
+
+This is configured in the [Scheduler](/guides/scheduler#approvals-and-guest-review).
+
+## Signing in
+
+MuseRank supports several sign-in methods, and members can choose what suits them:
+
+<CardGroup cols={3}>
+  <Card title="Email & password" icon="envelope">
+    Classic credentials with email verification.
+  </Card>
+  <Card title="Google or GitHub" icon="right-to-bracket">
+    One-click social sign-in.
+  </Card>
+  <Card title="Passkeys" icon="fingerprint">
+    Passwordless sign-in with your device's biometrics or PIN.
+  </Card>
+</CardGroup>
+
+<Tip>
+  Add a passkey from your account settings for the fastest, most secure way to sign in on your trusted devices.
+</Tip>

@@ -1,0 +1,93 @@
+---
+title: Core concepts
+description: The key ideas behind MuseRank — workspaces, websites, roles, credits, and topical authority — so the rest of the docs make sense.
+---
+
+A few concepts show up throughout MuseRank. Understanding them once makes everything else click.
+
+## Workspaces and websites
+
+MuseRank is organized in two levels:
+
+<CardGroup cols={2}>
+  <Card title="Workspace" icon="building">
+    A workspace is your team's shared home. It holds your members, billing, and one or more websites. Most people have a single workspace; agencies may create several.
+  </Card>
+  <Card title="Website" icon="globe">
+    A website is a single site you create content for. It has its own brand voice, keywords, topical map, articles, and publishing integrations. You can switch between websites from the top of the sidebar.
+  </Card>
+</CardGroup>
+
+Almost everything you do in MuseRank — keywords, articles, integrations, the scheduler — is scoped to the **currently selected website**. When you switch websites, the whole app updates to show that site's data.
+
+<Note>
+  Your plan determines how many websites you can add. See [Billing & credits](/guides/billing-and-credits) for details.
+</Note>
+
+## Roles and permissions
+
+Every member of a workspace has exactly one role. Roles control what each person can do:
+
+| Role | What they can do |
+| --- | --- |
+| **Owner** | Full control — manage billing, delete the workspace, manage API keys, and change member roles. The person who creates the workspace is the first owner. |
+| **Admin** | Manage members and invitations, connect and configure integrations, edit brand/website settings, and approve content. |
+| **Editor** | Day-to-day content work — create, edit, delete, and publish articles, and use already-connected integrations. |
+
+There's no read-only "viewer" role — the smallest role, editor, can already do content work. For the full breakdown, see [Workspaces & roles](/guides/workspaces-and-roles).
+
+## Credits
+
+AI work in MuseRank runs on **credits**. In practice, one credit is roughly one AI-generated article.
+
+- Each plan includes an allowance of credits per billing cycle (monthly or quarterly).
+- When you run out, you can buy a one-time **credit pack** or upgrade your plan — MuseRank prompts you at the moment you need more.
+- Smaller AI actions (like the editor's quick fixes) are governed by fair-use rate limits rather than burning a full credit each time.
+
+<Tip>
+  Credits reset at the start of each billing cycle. If you publish in bursts, the quarterly billing option gives you a larger pooled allowance.
+</Tip>
+
+## Topical authority
+
+Search engines reward sites that cover a subject thoroughly. **Topical authority** is the idea that publishing a connected cluster of articles around one theme — rather than scattered, unrelated posts — makes your whole site rank better.
+
+MuseRank builds this in deliberately:
+
+- **Keyword research** finds the winnable terms within your theme.
+- **Topical maps** group those terms into clusters with **pillar** pages and supporting articles, linked together.
+- **Internal linking** connects related articles so authority flows between them.
+
+You'll see these terms throughout the [Guides](/guides/keyword-research).
+
+## Winnability
+
+Not every keyword is worth targeting. **Winnability** is MuseRank's score (0–100) for how realistically you can rank for a keyword, combining:
+
+- **Search volume** — are people actually searching for it?
+- **Keyword difficulty** — how strong is the competition?
+
+A high-volume, low-difficulty keyword scores high; an impossible head term scores low. You target the high-scoring opportunities first. Learn more in [Keyword Research](/guides/keyword-research).
+
+## SEO vs. GEO
+
+MuseRank optimizes content for two audiences:
+
+<CardGroup cols={2}>
+  <Card title="SEO" icon="magnifying-glass">
+    **Search Engine Optimization** — helping your article rank in traditional search results (Google, Bing) through structure, keywords, metadata, and links.
+  </Card>
+  <Card title="GEO" icon="robot">
+    **Generative Engine Optimization** — making your content easy for AI answer engines (like ChatGPT and AI Overviews) to cite, by writing clear, well-structured, fact-rich passages.
+  </Card>
+</CardGroup>
+
+The editor scores your draft on both. See [SEO & GEO analysis](/guides/seo-geo-analysis).
+
+## Publishing
+
+MuseRank doesn't host your content — it pushes finished articles to wherever your site lives. You connect a **publishing integration** (like WordPress or Webflow) once, and from then on you can publish or schedule articles to it directly. See the [Integrations overview](/integrations/overview).
+
+<Card title="Ready to start?" icon="rocket" href="/quickstart" horizontal>
+  The Quickstart puts all of these concepts into practice.
+</Card>

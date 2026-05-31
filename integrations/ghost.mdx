@@ -1,0 +1,57 @@
+---
+title: Ghost
+description: Publish MuseRank articles to your Ghost publication using the Ghost Admin API.
+---
+
+Connect Ghost to publish articles directly to your Ghost publication. MuseRank uses Ghost's Admin API — you create a custom integration in Ghost, then paste its credentials into MuseRank.
+
+## What you'll need
+
+- A Ghost site (Ghost Pro or self-hosted) where you can create integrations.
+- Admin access to Ghost.
+
+## Step 1 — Create a Ghost integration
+
+<Steps>
+  <Step title="Open Ghost integrations">
+    In Ghost Admin, go to **Settings → Integrations** and create a new **custom integration**.
+  </Step>
+  <Step title="Copy the credentials">
+    Copy the **Admin API URL** (usually your site URL) and the **Admin API key**. The Admin API key has the format `{integration}:{secret}`.
+  </Step>
+</Steps>
+
+<Warning>
+  Keep the Admin API key safe. MuseRank encrypts it, but Ghost shows the secret only once.
+</Warning>
+
+## Step 2 — Connect in MuseRank
+
+<Steps>
+  <Step title="Open the Ghost integration">
+    In MuseRank, go to **Integrations** for your website and find the Ghost card.
+  </Step>
+  <Step title="Paste your credentials">
+    Enter the Admin API URL and Admin API key, then click **Connect Ghost**.
+  </Step>
+</Steps>
+
+## Publishing
+
+Once connected, publishing from the [editor](/guides/editor) creates a new Ghost post. MuseRank returns the Ghost URL in the article sidebar so you can jump straight to it.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title='"Invalid key" errors' icon="key">
+    The Admin key was likely copied incorrectly. Recreate the integration's key in Ghost and paste it again, making sure to include the full `{integration}:{secret}` value.
+  </Accordion>
+  <Accordion title="Self-hosted Ghost" icon="server">
+    Use the full HTTPS base URL for the Admin API URL, including the port if you run on a non-standard one.
+  </Accordion>
+  <Accordion title="Rotating or removing access" icon="arrows-rotate">
+    Disconnect and reconnect in MuseRank to rotate credentials or revoke MuseRank's access.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />

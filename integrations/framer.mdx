@@ -1,0 +1,79 @@
+---
+title: Framer
+description: Publish MuseRank articles to Framer CMS. Choose the Server API flow for hands-off publishing or the Framer plugin to pull articles on demand.
+---
+
+MuseRank supports two ways to get content into Framer. Pick the one that matches your workflow — you can even use both, since they're independent.
+
+<CardGroup cols={2}>
+  <Card title="Server API (recommended)" icon="bolt">
+    MuseRank pushes articles directly into your Framer CMS when you publish or schedule. Best for hands-off, automated publishing.
+  </Card>
+  <Card title="Framer plugin (pull)" icon="puzzle-piece">
+    Pull articles into Framer on demand from inside the Framer editor. Best when you want to curate before going live.
+  </Card>
+</CardGroup>
+
+## Option 1 — Server API (recommended)
+
+This is the production setup: MuseRank syncs articles into a managed Framer collection automatically.
+
+<Steps>
+  <Step title="Get your Framer Server API credentials">
+    In Framer, open your project and go to **Settings → Server API**. Copy the **Project URL** and **generate an API key**.
+  </Step>
+  <Step title="Connect in MuseRank">
+    In MuseRank, open **Integrations → Framer**, go to the **Publish** tab, paste your Project URL and API key, and click **Connect Framer**. MuseRank validates the credentials before saving.
+  </Step>
+  <Step title="Test the connection">
+    Use **Test connection** anytime to re-check your credentials and view project details.
+  </Step>
+</Steps>
+
+Articles are upserted by a stable ID into a managed collection named **MuseRank Articles** — so re-publishing updates the existing item instead of creating a duplicate.
+
+## Option 2 — Framer plugin (pull)
+
+Use the plugin when you'd rather pull articles into Framer yourself from within the editor.
+
+<Steps>
+  <Step title="Generate an API key">
+    In MuseRank, open the Framer card, switch to the **Plugin** tab, and generate an API key (it looks like `wb_sk_…`).
+  </Step>
+  <Step title="Install the MuseRank plugin">
+    Install the MuseRank plugin from the [Framer Marketplace](https://www.framer.com/marketplace/).
+  </Step>
+  <Step title="Connect and pull">
+    Open the plugin from a Framer **CMS managed collection**, paste your API key, and pull your articles. If you have multiple websites on one key, pick the right one, then refresh or sync.
+  </Step>
+</Steps>
+
+## Which should I use?
+
+<CardGroup cols={2}>
+  <Card title="Want scheduled, hands-off publishing?" icon="robot">
+    Use the **Server API** flow.
+  </Card>
+  <Card title="Want to review inside Framer first?" icon="eye">
+    Use the **plugin** flow.
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title='"Could not connect to Framer"' icon="plug-circle-xmark">
+    The Project URL or API key is likely wrong. Re-copy both from Framer's **Settings → Server API**.
+  </Accordion>
+  <Accordion title='Plugin shows "Origin not allowed"' icon="ban">
+    Open the plugin from inside Framer (from a CMS managed collection), not as a standalone page.
+  </Accordion>
+  <Accordion title='"No managed collection found"' icon="folder-open">
+    Open the plugin from a Framer CMS collection rather than the canvas, and grant it edit access.
+  </Accordion>
+  <Accordion title="Rate limited" icon="gauge">
+    The plugin's pull endpoint is rate-limited. Wait about a minute and try again — the plugin retries automatically and respects the cooldown.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />
