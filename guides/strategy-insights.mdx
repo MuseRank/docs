@@ -1,0 +1,59 @@
+---
+title: Strategy insights
+description: A strategic analytics view of your content — health, ranking trends, publishing velocity, topical authority, and prioritized recommendations.
+---
+
+Strategy Insights is the analytics layer that turns your raw data into direction. Where [Search Performance](/guides/search-performance) shows the underlying Google Search Console numbers, Strategy Insights synthesizes them — together with your content and topical map — into a health check and a prioritized list of what to do next.
+
+Find it under **Analyze → Strategy Insights** in the sidebar. A date-range filter (7, 30, 90 days, or a custom range) controls the period for trend-based metrics.
+
+## Content health
+
+A snapshot of your library's overall condition:
+
+- **Total published articles** — your content inventory.
+- **Average content score** — the mean [SEO/GEO score](/guides/seo-geo-analysis) across published articles.
+- **Declining** — how many queries lost ranking position versus the previous period.
+- **Refresh candidates** — high-priority articles flagged by the [Content Audit](/guides/content-audit).
+- **Content gaps** — topics your [topical map](/guides/topical-maps) suggests you're missing.
+
+Where possible, each metric is compared against the previous period so you can see whether things are trending up or down.
+
+## Position trends
+
+Based on your Google Search Console data, this view highlights movement in your rankings:
+
+- **Top improving** and **top declining** keywords, with how many positions each moved.
+- A **distribution** of how your tracked queries shifted — from big gains to big drops.
+
+<Note>
+  Position trends need roughly a week of Search Console history to be meaningful. If there isn't enough data yet, MuseRank tells you rather than showing misleading numbers.
+</Note>
+
+## Content velocity
+
+How quickly your team ships content:
+
+- **Articles published per week** over the selected range.
+- **Average days to publish** — how long an article takes from creation to going live.
+- For teams: **per-member output**, **average time spent in each workflow stage**, and the **bottleneck** stages that slow things down.
+
+## Topical authority
+
+For each **pillar** in your topical map, MuseRank computes a composite **authority score** and a **completion percentage** (how much of the planned cluster you've actually published). This shows which topics you genuinely own and which need more supporting content to become authoritative.
+
+## Recommendations
+
+The most actionable part of the page: MuseRank combines all of the above — health, trends, gaps, authority, and audit signals — into a prioritized list of **recommendations**. Instead of interpreting charts yourself, you get concrete next steps, such as refreshing a declining article, filling a content gap, or strengthening a pillar's internal links.
+
+## Strategy Insights vs. Search Performance
+
+| | Strategy Insights | [Search Performance](/guides/search-performance) |
+| --- | --- | --- |
+| **Focus** | Synthesis, health, and recommendations | Raw Search Console metrics |
+| **Answers** | "What should I do next?" | "How is my content performing?" |
+| **Inputs** | GSC **plus** your content and topical map | Google Search Console |
+
+<Tip>
+  Connect [Google Search Console](/integrations/google-search-console) to unlock trend and position data. Content-health and velocity metrics work from your MuseRank data even before GSC is connected.
+</Tip>
