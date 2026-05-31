@@ -1,0 +1,114 @@
+---
+title: WordPress
+description: Publish from MuseRank to WordPress instantly with the official MuseRank plugin. One-time pairing, signed pushes, and full SEO metadata support.
+---
+
+The MuseRank WordPress plugin is the recommended way to publish to a WordPress site. After a one-time pairing, every article you publish or schedule in MuseRank lands on your WordPress site within seconds — no manual export, no application passwords to manage.
+
+<Info>
+  MuseRank pushes to your site over a signed, secure request. After pairing, you don't share any WordPress login or password with MuseRank.
+</Info>
+
+## What you'll need
+
+- A WordPress site where you can install plugins (Administrator access).
+- The ability to make outbound HTTPS requests from your server (most hosts allow this).
+
+## Step 1 — Install the plugin
+
+<Steps>
+  <Step title="Add the plugin">
+    In your WordPress admin, go to **Plugins → Add New** and search for **MuseRank**, or upload the MuseRank plugin, then **Activate** it.
+  </Step>
+  <Step title="Open the MuseRank menu">
+    A **MuseRank** item appears in the WordPress admin sidebar. Open it to find the Connect screen.
+  </Step>
+</Steps>
+
+## Step 2 — Generate a pairing token in MuseRank
+
+<Steps>
+  <Step title="Open the WordPress integration">
+    In MuseRank, go to **Integrations → WordPress** for your website.
+  </Step>
+  <Step title="Enter your site URL and generate a token">
+    Enter your WordPress site URL (for example, `https://yoursite.com`) and click **Generate token**.
+  </Step>
+  <Step title="Copy the token now">
+    The token is shown only once. Copy it immediately.
+  </Step>
+</Steps>
+
+<Warning>
+  The pairing token is displayed a single time. If you lose it, just generate a new one.
+</Warning>
+
+## Step 3 — Pair the plugin
+
+<Steps>
+  <Step title="Open the plugin's Connect screen">
+    In WordPress, go to the **MuseRank** menu.
+  </Step>
+  <Step title="Confirm the MuseRank base URL">
+    Leave it as the default (`https://app.muserank.com`) unless instructed otherwise.
+  </Step>
+  <Step title="Paste the token and pair">
+    Paste your token into the **Integration Token** field and click **Pair with MuseRank**. On success you'll see a confirmation, and MuseRank records the connection.
+  </Step>
+</Steps>
+
+## Step 4 (optional) — Tune publishing defaults
+
+In the plugin's **Sync Settings**, you can set a default post status and default author. These apply when an incoming article doesn't specify its own.
+
+## You're done
+
+From now on, publishing or scheduling an article in MuseRank publishes it to WordPress automatically.
+
+<Check>
+  The plugin's Connect tab shows the health of the connection, including when the last article arrived ("Last article from MuseRank: 4 minutes ago").
+</Check>
+
+## What gets published
+
+| Field | Notes |
+| --- | --- |
+| Title & content | Full HTML, sanitized |
+| Slug | SEO-optimized permalink |
+| Featured image | Added to your Media Library |
+| Meta description & SEO title | Written for search results |
+| Focus keyword | Written to your SEO plugin (see below) |
+| Tags | From the article's keyword and focus phrase |
+| Category | From the article's [topical-map](/guides/topical-maps) pillar |
+| Author | Matched by name or email, falling back to your default |
+| Status & scheduled date | Honors MuseRank's status and scheduled time |
+
+### SEO plugin support
+
+MuseRank writes the focus keyword and SEO fields into your SEO plugin automatically. Supported: **Yoast SEO**, **Rank Math**, **All in One SEO**, and **SEOPress**.
+
+<Note>
+  Re-publishing an article in MuseRank **updates** the existing WordPress post — it never creates a duplicate.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The MuseRank menu isn't showing" icon="bars">
+    Confirm the plugin is activated and that your user has the Administrator role. Try deactivating and reactivating it.
+  </Accordion>
+  <Accordion title="Invalid token error" icon="key">
+    Copy the token directly from MuseRank with no extra spaces. If in doubt, generate a fresh token and pair again.
+  </Accordion>
+  <Accordion title="Articles aren't appearing" icon="file-circle-xmark">
+    Check **Posts → All Posts** for drafts or scheduled posts, and review the plugin's Activity/Sync log for errors.
+  </Accordion>
+  <Accordion title="Featured images not showing" icon="image">
+    Make sure your theme supports featured images and that your server can download external images.
+  </Accordion>
+  <Accordion title="403 Forbidden / connection blocked" icon="shield-halved">
+    Security plugins (Wordfence, Sucuri), Cloudflare bot protection, or a host firewall can block MuseRank's requests. Temporarily relax the rule, add an allowance for the MuseRank endpoints, or ask your host to whitelist `app.muserank.com`.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />

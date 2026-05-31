@@ -1,70 +1,131 @@
 ---
 title: Quickstart
-description: Get started with your project in minutes
+description: From sign-up to your first published article in MuseRank. Follow these steps to set up your workspace and ship content.
 ---
 
-## Prerequisites
+This guide takes you through the full MuseRank flow — creating an account, setting up your brand voice, finding a keyword, generating an article, and publishing it. Plan for about 15–20 minutes.
 
-Before you begin, make sure you have:
+<Note>
+  Everything here happens in the MuseRank app at [app.muserank.com](https://app.muserank.com). No installation required.
+</Note>
 
-- Node.js 18 or higher installed
-- A package manager (npm, yarn, or pnpm)
-- Basic knowledge of JavaScript/TypeScript
+## Step 1 — Create your account
 
-## Installation
+<Steps>
+  <Step title="Sign up">
+    Go to [app.muserank.com](https://app.muserank.com) and create an account with your email and a password, or continue with **Google** or **GitHub**. You can also add a [passkey](/guides/workspaces-and-roles#signing-in) later for faster sign-in.
+  </Step>
+  <Step title="Verify your email">
+    Click the link in the verification email we send you. This unlocks the rest of the app.
+  </Step>
+  <Step title="Choose a plan">
+    Pick a plan to start your trial. Plans differ by how many articles (credits) and websites they include — you can change or cancel anytime. See [Billing & credits](/guides/billing-and-credits).
+  </Step>
+</Steps>
 
-Install the package using your preferred package manager:
+## Step 2 — Set up your brand voice
 
-<CodeGroup>
+After subscribing, MuseRank walks you through a short **onboarding** that defines the website you'll create content for.
 
-```bash npm
-npm install your-package
-```
+<Steps>
+  <Step title="Add your website">
+    Enter your site's URL. MuseRank visits it to understand what you do.
+  </Step>
+  <Step title="Let MuseRank learn your voice">
+    MuseRank analyzes your existing pages to learn your tone, style, and audience, then builds a reusable **brand voice profile**. Every article it generates will match this.
+  </Step>
+  <Step title="Review and confirm">
+    Check the details MuseRank extracted, adjust anything that's off, and finish onboarding.
+  </Step>
+</Steps>
 
-```bash yarn
-yarn add your-package
-```
+For a full walkthrough, see [Onboarding & brand voice](/onboarding).
 
-```bash pnpm
-pnpm add your-package
-```
+## Step 3 — Connect a data source (recommended)
 
-</CodeGroup>
+Before researching, connect **Google Search Console**. It's the recommended first integration because it powers keyword opportunities and performance tracking across the app.
 
-## Basic usage
+<Card title="Connect Google Search Console" icon="chart-line" href="/integrations/google-search-console">
+  Open **Integrations → Google Search Console** and authorize your site. This step is optional but highly recommended.
+</Card>
 
-Here's a simple example to get you started:
+## Step 4 — Find a winnable keyword
 
-```javascript
-import { YourPackage } from 'your-package';
+<Steps>
+  <Step title="Open Keyword Research">
+    From the sidebar, go to **Keyword Research**.
+  </Step>
+  <Step title="Enter a seed topic">
+    Type a topic related to your business (for example, `email marketing for ecommerce`) and run the search.
+  </Step>
+  <Step title="Pick a high-winnability keyword">
+    Review the results sorted by **winnability score**. Aim for keywords scoring 50+ — they have real traffic and beatable competition. Save promising ones to your [Keyword Bank](/guides/keyword-bank).
+  </Step>
+</Steps>
 
-// Initialize
-const client = new YourPackage({
-  apiKey: 'your-api-key'
-});
+Learn more in [Keyword Research](/guides/keyword-research).
 
-// Make your first request
-const result = await client.doSomething();
-console.log(result);
-```
+## Step 5 — Generate your first article
 
-## Configuration
+<Steps>
+  <Step title="Start the article wizard">
+    From a keyword, click **Generate Article**, or open **Articles → New Article**. The wizard guides you through four steps: **Keyword → Brief → Outline → Draft**.
+  </Step>
+  <Step title="Review each step">
+    Confirm the target keyword, adjust the brief and outline, then let MuseRank write the draft. It streams in live and matches your brand voice.
+  </Step>
+  <Step title="Polish in the editor">
+    The draft opens in the [editor](/guides/editor). Use the [AI Assistant](/guides/ai-assistant) to fix any flagged SEO or readability issues, add a [featured image](/guides/images), and check your [SEO & GEO score](/guides/seo-geo-analysis).
+  </Step>
+</Steps>
 
-Configure your setup with these options:
+<Tip>
+  In a hurry or already know what you want to write? Use [Quick Draft](/guides/quick-draft) to skip the wizard and start with a blank editor.
+</Tip>
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `apiKey` | string | Your API key for authentication |
-| `timeout` | number | Request timeout in milliseconds |
-| `debug` | boolean | Enable debug logging |
+## Step 6 — Connect a publishing destination
 
-## Next steps
+To get your article live, connect where your site is hosted:
+
+<CardGroup cols={3}>
+  <Card title="WordPress" icon="wordpress" href="/integrations/wordpress" />
+  <Card title="Shopify" icon="shopify" href="/integrations/shopify" />
+  <Card title="Webflow" icon="w" href="/integrations/webflow" />
+  <Card title="Framer" icon="f" href="/integrations/framer" />
+  <Card title="Ghost" icon="ghost" href="/integrations/ghost" />
+  <Card title="More options" icon="ellipsis" href="/integrations/overview" />
+</CardGroup>
+
+## Step 7 — Publish or schedule
+
+<Steps>
+  <Step title="Publish now">
+    From the editor, click **Publish** and choose your connected destination. MuseRank carries across the title, content, slug, featured image, and SEO metadata.
+  </Step>
+  <Step title="Or schedule it">
+    Prefer to plan ahead? Send the article to the [Scheduler](/guides/scheduler) to publish at a future date, or set up a recurring queue.
+  </Step>
+</Steps>
+
+## You're up and running
+
+<Check>
+  You've researched a keyword, generated a brand-matched article, and published it. That's the core MuseRank loop.
+</Check>
+
+Where to go next:
 
 <CardGroup cols={2}>
-  <Card title="API reference" icon="book" href="/api-reference">
-    Explore all available methods and options
+  <Card title="Automate it with Auto-Pilot" icon="robot" href="/guides/autopilot">
+    Let MuseRank research, write, and publish on a recurring schedule.
   </Card>
-  <Card title="Examples" icon="code" href="/examples">
-    See more detailed examples and use cases
+  <Card title="Build topical authority" icon="sitemap" href="/guides/topical-maps">
+    Plan a full cluster of connected content instead of one-off posts.
+  </Card>
+  <Card title="Invite your team" icon="users" href="/guides/workspaces-and-roles">
+    Add members and set up an approval workflow.
+  </Card>
+  <Card title="Track performance" icon="chart-line" href="/guides/search-performance">
+    See how your content ranks and find new opportunities.
   </Card>
 </CardGroup>

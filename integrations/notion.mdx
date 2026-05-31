@@ -1,0 +1,38 @@
+---
+title: Notion
+description: Publish MuseRank articles into a Notion database for review, collaboration, or as a content hub.
+---
+
+Connect Notion to publish MuseRank articles into a Notion database. This is useful as a collaborative review space, a content archive, or a hub that other tools read from.
+
+## Connect Notion
+
+<Steps>
+  <Step title="Start the connection">
+    In MuseRank, open **Integrations** for your website and find the Notion card. Start the connection.
+  </Step>
+  <Step title="Authorize and choose a destination">
+    Approve the Notion authorization screen and grant MuseRank access to the workspace and the database (or page) where articles should be created.
+  </Step>
+</Steps>
+
+<Note>
+  Notion only exposes the pages and databases you explicitly share with an integration during authorization. Make sure to grant access to the destination you want to publish into.
+</Note>
+
+## Publishing
+
+Once connected, publishing or scheduling an article creates a corresponding entry in your Notion database with the article's content and metadata. Publishing happens reliably in the background, so your article appears in Notion shortly after you publish.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Articles aren't appearing in Notion" icon="file-circle-xmark">
+    Confirm that the target database or page was shared with the MuseRank integration during authorization. Reconnect and re-grant access if needed.
+  </Accordion>
+  <Accordion title="Authorization expired or invalid" icon="key">
+    Reconnect Notion from the Integrations page to refresh access.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />

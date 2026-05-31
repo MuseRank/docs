@@ -1,0 +1,62 @@
+---
+title: Shopify
+description: Publish MuseRank articles directly to your Shopify store blog using the embedded MuseRank app.
+---
+
+Connect Shopify to publish finished articles straight into your store's blog. MuseRank creates Shopify blog articles with your content, featured image, and SEO metadata.
+
+## What you'll need
+
+- A Shopify store with admin access.
+- A plan that supports apps (all paid Shopify plans).
+- Your store's `.myshopify.com` domain.
+
+## Connect Shopify
+
+<Steps>
+  <Step title="Start the connection">
+    In MuseRank, open **Integrations** for your website, find the Shopify card, enter your store's `.myshopify.com` domain, and click **Connect Shopify**.
+  </Step>
+  <Step title="Approve the permissions">
+    Approve the Shopify authorization screen. MuseRank requests **content-only** scopes — blogs, articles, metafields, and files. It does not touch orders, customers, or payments.
+  </Step>
+  <Step title="Choose a default blog">
+    After connecting, open **Settings → Shopify** and pick the blog where articles should be published.
+  </Step>
+</Steps>
+
+<Warning>
+  Enter your `.myshopify.com` address (for example, `example-store.myshopify.com`), not your custom storefront domain.
+</Warning>
+
+## Publishing
+
+Once connected and configured, publish from the [editor](/guides/editor) or [Scheduler](/guides/scheduler). MuseRank:
+
+- Uploads your featured image to **Shopify Files**.
+- Creates a blog article with your HTML content and SEO metadata.
+- Stores the resulting article URL back in MuseRank.
+
+<Tip>
+  Use the **Send test draft** action in the Shopify app to confirm everything is wired up before you publish for real.
+</Tip>
+
+## Republishing
+
+Editing and re-publishing an article updates the existing Shopify blog article rather than creating a duplicate.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title='"Shop domain required"' icon="store">
+    Enter the `.myshopify.com` domain, not a custom domain.
+  </Accordion>
+  <Accordion title="Switching stores" icon="arrows-rotate">
+    Update the domain and reconnect to regenerate credentials for the new store.
+  </Accordion>
+  <Accordion title="Permission errors" icon="lock">
+    These usually mean the app was removed inside Shopify. Reconnect from MuseRank to re-install it.
+  </Accordion>
+</AccordionGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />

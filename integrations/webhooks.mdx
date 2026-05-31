@@ -1,0 +1,174 @@
+---
+title: Webhooks
+description: Send MuseRank publish events to any custom endpoint and handle them in your own app with the official @muserank/webhook-sdk.
+---
+
+Webhooks let MuseRank notify *your* application whenever an article is published, updated, scheduled, or fails. Use them to sync content into a custom backend, a headless CMS, Slack, or any system you control. There's an official SDK that handles all the security details for you.
+
+<Info>
+  Webhooks are for developers building a custom integration. If your site runs on a supported CMS, a [direct integration](/integrations/overview) is simpler.
+</Info>
+
+## Set up a webhook in MuseRank
+
+<Steps>
+  <Step title="Open the Webhook integration">
+    In MuseRank, go to **Integrations** for your website and find the Webhook card.
+  </Step>
+  <Step title="Enter your endpoint URL">
+    Provide the URL MuseRank should call, e.g. `https://yourdomain.com/api/webhooks/muserank`.
+  </Step>
+  <Step title="Generate an access token">
+    Generate and copy an access token. Your endpoint uses it to verify that requests genuinely come from MuseRank.
+  </Step>
+  <Step title="Choose event types">
+    Select which events you want to receive, then connect.
+  </Step>
+  <Step title="Send a test">
+    Use the **Test** button to send a `test.ping` event and confirm your endpoint is receiving requests.
+  </Step>
+</Steps>
+
+## Events
+
+| Event | When it fires |
+| --- | --- |
+| `article.published` | An article was successfully published |
+| `article.updated` | A published article was updated |
+| `article.scheduled` | An article was scheduled for publishing |
+| `article.failed` | An article failed to publish |
+| `test.ping` | A test event from the MuseRank dashboard |
+
+## Article payload
+
+Each event delivers the article and its metadata:
+
+```json
+{
+  "id": "article-id",
+  "title": "Article title",
+  "content_markdown": "# Markdown content...",
+  "content_html": "<h1>HTML content...</h1>",
+  "meta_description": "SEO meta description",
+  "created_at": "2026-01-01T10:00:00Z",
+  "image_url": "https://...",
+  "slug": "article-slug",
+  "tags": ["keyword", "topic"]
+}
+```
+
+## Handle events with the SDK
+
+The official `@muserank/webhook-sdk` works with Next.js, Remix, Astro, SvelteKit, Express, Cloudflare Workers, Deno, Bun, Hono, and any runtime with standard `Request`/`Response` support. It verifies the token, checks signatures, and protects against replay attacks automatically.
+
+```bash
+npm install @muserank/webhook-sdk
+```
+
+<CodeGroup>
+```typescript Next.js (App Router)
+// app/api/webhooks/muserank/route.ts
+import { createMuseRankWebhook } from '@muserank/webhook-sdk/nextjs';
+
+export const POST = createMuseRankWebhook({
+  accessToken: process.env.MUSERANK_WEBHOOK_TOKEN!,
+  onArticlePublished: async (article) => {
+    // Save the article to your database
+    console.log('Published:', article.title);
+  },
+  onArticleUpdated: async (article) => {
+    console.log('Updated:', article.title);
+  },
+});
+```
+
+```typescript Remix / Astro / SvelteKit (Web)
+import { createMuseRankWebhook } from '@muserank/webhook-sdk/web';
+
+const handler = createMuseRankWebhook({
+  accessToken: process.env.MUSERANK_WEBHOOK_TOKEN!,
+  onArticlePublished: async (article) => {
+    console.log('New article:', article.title);
+  },
+});
+
+// Wire `handler(request)` into your route's POST/action.
+export const POST = async ({ request }: { request: Request }) => handler(request);
+```
+
+```typescript Express
+import express from 'express';
+import { createMuseRankWebhook } from '@muserank/webhook-sdk/express';
+
+const app = express();
+app.use(express.json());
+
+app.post('/api/webhooks/muserank', createMuseRankWebhook({
+  accessToken: process.env.MUSERANK_WEBHOOK_TOKEN!,
+  onArticlePublished: async (article) => {
+    console.log('New article:', article.title);
+  },
+}));
+```
+</CodeGroup>
+
+### Other frameworks
+
+For any framework not listed, use the core handler:
+
+```typescript
+import { createWebhookHandler } from '@muserank/webhook-sdk';
+
+const handler = createWebhookHandler({
+  accessToken: process.env.MUSERANK_WEBHOOK_TOKEN!,
+  onArticlePublished: async (article) => {
+    // handle the article
+  },
+});
+```
+
+## Security
+
+The SDK handles verification so you don't have to:
+
+<AccordionGroup>
+  <Accordion title="Token verification" icon="key">
+    Every request carries your access token as a bearer token. The SDK compares it using constant-time comparison to prevent timing attacks.
+  </Accordion>
+  <Accordion title="Signature verification (recommended)" icon="signature">
+    Add a `signingSecret` to verify the `X-MuseRank-Signature` header (HMAC-SHA256) for an extra layer of trust:
+
+    ```typescript
+    createMuseRankWebhook({
+      accessToken: process.env.MUSERANK_WEBHOOK_TOKEN!,
+      signingSecret: process.env.MUSERANK_SIGNING_SECRET,
+    });
+    ```
+  </Accordion>
+  <Accordion title="Replay protection" icon="clock-rotate-left">
+    Requests with timestamps older than 5 minutes are rejected by default. You can adjust the tolerance via `timestampToleranceMs`.
+  </Accordion>
+  <Accordion title="Payload size limits" icon="weight-scale">
+    Requests larger than 1MB are rejected by default. Adjust with `maxBodySizeBytes` if you expect larger payloads.
+  </Accordion>
+</AccordionGroup>
+
+<Warning>
+  If you enable signature verification, make sure your framework preserves the **raw request body**. Body parsers can reorder or reformat JSON and invalidate the signature. The `/web` and `/nextjs` adapters read the raw body for you; for Express and Next.js Pages Router, see the SDK README for the raw-body setup.
+</Warning>
+
+## Example uses
+
+<CardGroup cols={3}>
+  <Card title="Headless CMS" icon="database">
+    Create entries in Contentful, Sanity, or your own CMS on publish.
+  </Card>
+  <Card title="Slack notifications" icon="slack">
+    Post a message to a channel whenever an article goes live.
+  </Card>
+  <Card title="Failure alerts" icon="triangle-exclamation">
+    Open a ticket or alert your team when `article.failed` fires.
+  </Card>
+</CardGroup>
+
+<Card title="Back to all integrations" icon="arrow-left" href="/integrations/overview" horizontal />
